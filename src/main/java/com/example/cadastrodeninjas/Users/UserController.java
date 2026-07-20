@@ -1,4 +1,4 @@
-package com.example.cadastrodeninjas;
+package com.example.cadastrodeninjas.Users;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class Controller {
+public class UserController {
 
     @GetMapping("/boasVindas") //Decorador que cria o endpoint
     public String boasVindas(){
