@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class Controller {
 
-    @GetMapping("/boasVindas")
+    @GetMapping("/boasVindas") //Decorador que cria o endpoint
     public String boasVindas(){
         return "Essa é a mensagem de boas vindas.";
     }
