@@ -19,9 +19,14 @@ public class UserModel {
     @Id //Faz com que o Id seja identificado e deixe de ser tratado como atributo comum da classe.
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Permite adicionar uma estrategia de atribuição de valor. Nesse caso, será o autoincremento.
     private Long id;
+
     private String name;
+
+    @Column(unique = true) //Torna impossível existir dois usuários com o mesmo email
     private String email;
+
     private int age;
+
     private String role;
 
     @ManyToMany //Vários usuários podem ter vários projetos

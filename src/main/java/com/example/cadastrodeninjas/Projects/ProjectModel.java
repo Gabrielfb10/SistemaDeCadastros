@@ -18,9 +18,13 @@ public class ProjectModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String customerName;
+
     private String category;
+
     private int difficulty;
 
     @ManyToMany(mappedBy = "projects") //Varios projetos poderão receber vários usuários. A tabela que se releciona com outra e não é referência deve receber o nome de onde vem a relação.
