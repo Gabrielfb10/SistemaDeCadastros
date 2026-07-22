@@ -21,8 +21,8 @@ public class UserController {
 
     //Criar usuario (CREATE)
     @PostMapping("/create")
-    public String userCreate(){
-        return "Usuário criado com sucesso";
+    public UserModel userCreate(@RequestBody UserModel user){
+        return userService.userCreate(user);
     }
 
     //Buscar usuario (READ)

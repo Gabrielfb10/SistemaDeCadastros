@@ -21,4 +21,8 @@ public class UserService {
         Optional<UserModel> user = userRepository.findById(id); //O optional é usado quando existe há chance do elemento não existir
         return user.orElse(null); //o metodo orElse é usado quando há chance do elemento não existir
     }
+
+    public UserModel userCreate(UserModel user){
+        return userRepository.save(user);
+    }
 }
