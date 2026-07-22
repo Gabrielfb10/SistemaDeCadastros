@@ -27,8 +27,8 @@ public class UserController {
 
     //Buscar usuario (READ)
     @GetMapping("/{id}")
-    public String userSearch(){
-        return "Usuário lidos com sucesso";
+    public UserModel userSearch(@PathVariable Long id){ //Decorador usado para usar variaveis recebidas pela url
+        return userService.userSearch(id);
     }
 
     //Mostrar todos os usuario (READ)

@@ -3,6 +3,7 @@ package com.example.cadastrodeninjas.Users;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service //Declara que é uma camda de serviõ
 public class UserService {
@@ -14,5 +15,10 @@ public class UserService {
 
     public List<UserModel> allUserSearch(){
         return userRepository.findAll();
+    }
+
+    public UserModel userSearch(Long id){
+        Optional<UserModel> user = userRepository.findById(id); //O optional é usado quando existe há chance do elemento não existir
+        return user.orElse(null); //o metodo orElse é usado quando há chance do elemento não existir
     }
 }
