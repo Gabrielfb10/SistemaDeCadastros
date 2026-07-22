@@ -25,6 +25,8 @@ public class UserModel {
     @Column(unique = true) //Torna impossível existir dois usuários com o mesmo email
     private String email;
 
+    private String phone;
+
     private int age;
 
     private String role;
