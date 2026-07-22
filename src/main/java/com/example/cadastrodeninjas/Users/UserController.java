@@ -39,8 +39,8 @@ public class UserController {
 
     //Atualizar usuario (UPDATE)
     @PutMapping("/update/{id}")
-    public String userUpdate(){
-        return "Usuário alterado com sucesso";
+    public UserModel userUpdate(@PathVariable Long id, @RequestBody UserModel userUpdated){
+        return userService.userUpdate(id, userUpdated);
     }
 
     //Deletar usuario (DELETE)
@@ -49,4 +49,6 @@ public class UserController {
         userService.userDelete(id);
         return "Usuário deletado com sucesso";
     }
+
+
 }

@@ -29,4 +29,14 @@ public class UserService {
     public void userDelete(Long id){
         userRepository.deleteById(id);
     }
+
+    public UserModel userUpdate(Long id, UserModel userUpdated){
+        if(!userRepository.existsById(id)){
+            return null;
+        }
+
+        userUpdated.setId(id);
+        return userUpdated;
+
+    }
 }
