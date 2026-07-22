@@ -1,6 +1,7 @@
 package com.example.cadastrodeninjas.Projects;
 
 import com.example.cadastrodeninjas.Users.UserModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +28,8 @@ public class ProjectModel {
 
     private int difficulty;
 
-    @ManyToMany(mappedBy = "projects") //Varios projetos poderão receber vários usuários. A tabela que se releciona com outra e não é referência deve receber o nome de onde vem a relação.
+    @ManyToMany(mappedBy = "projects")//Varios projetos poderão receber vários usuários. A tabela que se releciona com outra e não é referência deve receber o nome de onde vem a relação.
+    @JsonIgnore //Bloqueia a serialização desse atributo e impede o loop
     private List<UserModel> users;
 
 }
