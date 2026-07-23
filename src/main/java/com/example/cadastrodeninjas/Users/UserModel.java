@@ -25,7 +25,7 @@ public class UserModel {
     @Column(unique = true) //Torna impossível existir dois usuários com o mesmo email
     private String email;
 
-    private String phone;
+    private String phone; //Coluna adicionada após alteração pelo migration. O model não deve ser alterado em nenhuma hipótese se não houver um DTO.
 
     private int age;
 
