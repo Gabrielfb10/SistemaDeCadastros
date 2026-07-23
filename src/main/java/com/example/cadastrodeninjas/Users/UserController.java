@@ -21,25 +21,25 @@ public class UserController {
 
     //Criar usuario (CREATE)
     @PostMapping("/create")
-    public UserModel userCreate(@RequestBody UserModel user){
-        return userService.userCreate(user);
+    public UserDTO userCreate(@RequestBody UserDTO userDTO){
+        return userService.userCreate(userDTO);
     }
 
     //Buscar usuario (READ)
     @GetMapping("/{id}")
-    public UserModel userSearch(@PathVariable Long id){ //Decorador usado para usar variaveis recebidas pela url
+    public UserDTO userSearch(@PathVariable Long id){ //Decorador usado para usar variaveis recebidas pela url
         return userService.userSearch(id);
     }
 
     //Mostrar todos os usuario (READ)
     @GetMapping("/all")
-    public List<UserModel> allUserSearch(){
+    public List<UserDTO> allUserSearch(){
         return userService.allUserSearch();
     }
 
     //Atualizar usuario (UPDATE)
     @PutMapping("/update/{id}")
-    public UserModel userUpdate(@PathVariable Long id, @RequestBody UserModel userUpdated){
+    public UserDTO userUpdate(@PathVariable Long id, @RequestBody UserDTO userUpdated){
         return userService.userUpdate(id, userUpdated);
     }
 
